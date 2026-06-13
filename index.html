@@ -542,10 +542,7 @@
 
       /* method: vertical timeline */
       .method-steps {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        position: static;
+        display: flex; flex-direction: column; gap: 0; position: static;
       }
       .method-steps::before { display: none; }
       .step {
@@ -565,6 +562,11 @@
 
       /* testimonials */
       .testimonial-grid { grid-template-columns: 1fr; gap: 16px; }
+
+      /* autor */
+      .autor-grid { grid-template-columns: 1fr !important; gap: 32px !important; text-align: center; }
+      .autor-grid > div:last-child { text-align: left; }
+      .autor-grid img { margin: 0 auto 18px !important; }
     }
 
     /* ══════════════════════════════════════════════════════════
@@ -574,8 +576,9 @@
       :root { --header-h: 58px; }
       section { padding: 56px 0; }
       .section-header { margin-bottom: 36px; }
+      .section-header p { font-size: .9rem; }
 
-      /* urgency bar: hide middle block on very small */
+      /* urgency bar */
       .urgency-bar { font-size: .7rem; padding: 7px 12px; }
       .urgency-hide { display: none; }
 
@@ -587,12 +590,10 @@
       .hero { padding: 52px 0 44px; }
       .hero h1 { font-size: clamp(2.5rem, 10vw, 3.2rem); }
       .hero h1 .number { font-size: clamp(4rem, 18vw, 5rem); }
-      .hero-sub { font-size: .95rem; margin-bottom: 28px; }
+      .hero-sub { font-size: .92rem; margin-bottom: 28px; }
       .hero-ctas { flex-direction: column; gap: 12px; margin-bottom: 32px; }
       .hero-ctas .btn-primary,
       .hero-ctas .btn-secondary { width: 100%; font-size: .95rem; padding: 16px 20px; }
-
-      /* social proof */
       .hero-social-proof { padding-top: 20px; gap: 12px; }
       .sp-text { font-size: .78rem; }
 
@@ -605,7 +606,7 @@
 
       /* callout */
       .callout { padding: 18px 16px; }
-      .callout p { font-size: .95rem; }
+      .callout p { font-size: .9rem; }
 
       /* for cards */
       .for-card { padding: 20px; }
@@ -614,29 +615,46 @@
 
       /* method */
       .step-num { width: 46px; height: 46px; min-width: 46px; font-size: 1.1rem; }
+      .step-title { font-size: .88rem; }
 
       /* content */
       .content-grid { gap: 28px; }
       .content-section .btn-primary { width: 100%; font-size: .95rem; }
+      .content-item { gap: 10px; }
+      .ci-text h4 { font-size: .88rem; }
+
+      /* testimonials */
+      .tcard { padding: 20px; }
+      .tcard p { font-size: .85rem; }
+
+      /* autor */
+      .autor-grid { grid-template-columns: 1fr !important; gap: 24px !important; text-align: center; }
+      .autor-grid > div:last-child { text-align: left; }
+      .autor-grid img { width: 180px !important; height: 180px !important; margin: 0 auto 14px !important; }
+      .autor-grid p { font-size: .9rem !important; }
+      .autor-grid a.btn-primary { width: 100%; justify-content: center; font-size: .9rem; padding: 15px 16px; }
 
       /* price box */
-      .price-box { padding: 24px 18px; }
+      .price-box { padding: 20px 16px; }
       .price-box::after { display: none; }
-      .price-now { font-size: 3rem; }
-      .price-features li { font-size: .85rem; }
-      .guarantee-note { font-size: .78rem; padding: 12px 14px; }
+      .price-features li { font-size: .82rem; flex-wrap: wrap; gap: 4px; }
+      .price-features li span:last-child { margin-left: auto; }
+      .price-now { font-size: 2.6rem !important; }
+      .price-note { font-size: .75rem !important; }
+      .guarantee-note { font-size: .76rem; padding: 12px 10px; flex-direction: column; gap: 6px; }
+      .cta-section .btn-primary { font-size: .95rem !important; padding: 17px 16px !important; }
 
       /* cta inner */
       .cta-inner > p { font-size: .92rem; margin-bottom: 28px; }
 
       /* faq */
-      .faq-q { font-size: .86rem; padding: 16px 14px; }
-      .faq-a { padding: 0 14px; font-size: .84rem; }
+      .faq-q { font-size: .84rem; padding: 15px 14px; min-height: 52px; }
+      .faq-a { padding: 0 14px; font-size: .83rem; }
       .faq-a.open { padding: 12px 14px 16px; }
 
       /* floating cta */
       .floating-cta { bottom: 14px; right: 12px; left: 12px; }
-      .floating-cta .btn-primary { width: 100%; font-size: .88rem; padding: 15px 16px; min-height: 50px; }
+      .floating-cta .btn-primary { width: 100%; font-size: .86rem; padding: 15px 16px; min-height: 50px; }
     }
 
     /* ══════════════════════════════════════════════════════════
@@ -977,15 +995,6 @@
   </div>
 </section>
 
-<style>
-  @media (max-width: 900px) {
-    .autor-grid { grid-template-columns: 1fr !important; gap: 32px !important; text-align: center; }
-    .autor-grid > div:last-child { text-align: left; }
-  }
-  @media (max-width: 600px) {
-    .autor-grid img { width: 200px !important; height: 200px !important; }
-  }
-</style>
 
 <div class="divider"></div>
 
@@ -1073,11 +1082,11 @@
             <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 147,00</span>
           </li>
         </ul>
-        <div style="border-top:1px solid rgba(0,229,255,.18);padding-top:16px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;">
+        <div style="border-top:1px solid rgba(0,229,255,.18);padding-top:16px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;">
           <span style="font-size:.88rem;color:var(--gray);">Valor total</span>
           <span style="text-decoration:line-through;color:var(--gray);font-size:1rem;font-weight:700;">R$ 635,00</span>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;flex-wrap:wrap;gap:8px;">
           <span style="font-size:1rem;font-weight:700;color:var(--white);">Somente hoje por</span>
           <div class="price-now" style="margin:0;">R$ 67,<span style="font-size:1.9rem;">00</span></div>
         </div>
