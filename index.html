@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050d1a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>MD-90 | Método de Negociação de Dívidas — SigaLearning</title>
+  <meta name="description" content="Aprenda a negociar dívidas com até 90% de desconto. Método comprovado do Prof. Júnior Cardoso — SigaLearning." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cyan:   #00e5ff;
+      --cyan2:  #00b8d9;
+      --navy:   #050d1a;
+      --navy2:  #071225;
+      --navy3:  #0a1a33;
+      --wolf:   #1a3a6e;
+      --white:  #ffffff;
+      --gray:   #94a3b8;
+      --danger: #ff4444;
+      --gold:   #ffd700;
+      --header-h: 62px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-h);
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    a, button {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    /* ── PARTICLES ────────────────────────────────────────── */
+    #particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
+    /* ── UTILITY ──────────────────────────────────────────── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+
+    .tag {
+      display: inline-block;
+      background: rgba(0,229,255,.12);
+      border: 1px solid rgba(0,229,255,.35);
+      color: var(--cyan);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+    .highlight { color: var(--cyan); }
+
+    /* ── BUTTONS ──────────────────────────────────────────── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #00e5ff, #0070c0);
+      color: #000;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 0 40px rgba(0,229,255,.4);
+      min-height: 52px;
+      white-space: nowrap;
+    }
+    .btn-primary:hover, .btn-primary:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 0 60px rgba(0,229,255,.65);
+    }
+    .btn-primary:active { transform: scale(.97); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: transparent;
+      border: 2px solid var(--cyan);
+      color: var(--cyan);
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+      min-height: 52px;
+      white-space: nowrap;
+    }
+    .btn-secondary:hover { background: var(--cyan); color: #000; }
+
+    /* ── PULSE ────────────────────────────────────────────── */
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0 rgba(0,229,255,.5); }
+      70%  { box-shadow: 0 0 0 16px rgba(0,229,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,229,255,0); }
+    }
+    .pulse { animation: pulse-ring 2.2s infinite; }
+
+    /* ── FADE UP ──────────────────────────────────────────── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+    .fade-up { animation: fadeUp .75s ease forwards; }
+    .d1 { animation-delay: .15s; opacity: 0; }
+    .d2 { animation-delay: .3s;  opacity: 0; }
+    .d3 { animation-delay: .45s; opacity: 0; }
+    .d4 { animation-delay: .6s;  opacity: 0; }
+
+    /* ── REVEAL ON SCROLL ─────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── DIVIDER ──────────────────────────────────────────── */
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(0,229,255,.18), transparent); }
+
+    /* ── URGENCY BAR ──────────────────────────────────────── */
+    .urgency-bar {
+      background: linear-gradient(90deg, #071828, #0a1f38, #071828);
+      border-bottom: 1px solid rgba(0,229,255,.18);
+      padding: 8px 20px;
+      text-align: center;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      overflow: hidden;
+    }
+    .urgency-bar span { color: var(--cyan); }
+    .urgency-sep { color: rgba(255,255,255,.25); margin: 0 8px; }
+
+    /* ── TOPBAR ───────────────────────────────────────────── */
+    .topbar {
+      background: rgba(5,13,26,.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0,229,255,.13);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+    }
+    .topbar .inner { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 12px; }
+    .logo-wrap { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .logo-wrap img { width: 38px; height: 38px; object-fit: contain; flex-shrink: 0; }
+    .logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: .08em; color: var(--white); white-space: nowrap; }
+    .logo-text span { color: var(--cyan); }
+    .topbar-cta { padding: 10px 18px; font-size: .8rem; min-height: 40px; }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .hero {
+      min-height: calc(100svh - var(--header-h) - 38px);
+      display: flex;
+      align-items: center;
+      padding: 72px 0 64px;
+      background: radial-gradient(ellipse 80% 55% at 50% 0%, rgba(0,70,140,.32) 0%, transparent 70%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='1' cy='1' r='1' fill='rgba(0,229,255,0.055)'/%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+    }
+    .chess-bg {
+      position: absolute; right: -40px; top: 50%; transform: translateY(-50%);
+      font-size: 16rem; opacity: .03; user-select: none; pointer-events: none;
+    }
+
+    .hero-grid { display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: center; }
+
+    .hero-badge { margin-bottom: 18px; }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+      line-height: 1.0;
+      letter-spacing: .02em;
+      margin-bottom: 22px;
+    }
+    .hero h1 .number {
+      font-size: clamp(4.2rem, 8.5vw, 8.5rem);
+      color: var(--cyan);
+      display: block;
+      line-height: .88;
+      text-shadow: 0 0 50px rgba(0,229,255,.55);
+    }
+    .hero-sub {
+      font-size: clamp(.95rem, 2vw, 1.18rem);
+      color: #cdd9e8;
+      max-width: 540px;
+      margin-bottom: 32px;
+      line-height: 1.72;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+
+    .hero-social-proof {
+      display: flex; align-items: center; gap: 14px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 24px;
+    }
+    .avatars { display: flex; }
+    .avatars span {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 2px solid var(--navy); background: var(--wolf);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .65rem; font-weight: 700; margin-left: -7px; color: var(--cyan);
+    }
+    .avatars span:first-child { margin-left: 0; }
+    .sp-text { font-size: .83rem; color: var(--gray); line-height: 1.4; }
+    .sp-text strong { color: var(--white); }
+
+    /* Book 3D */
+    .hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
+    .book-3d { position: relative; width: 260px; perspective: 800px; }
+    .book-cover {
+      width: 100%; border-radius: 8px 14px 14px 8px;
+      background: linear-gradient(145deg, #071830 0%, #0a2444 40%, #05111e 100%);
+      border: 2px solid rgba(0,229,255,.32);
+      padding: 28px 22px;
+      box-shadow: -8px 8px 0 rgba(0,229,255,.13), -16px 16px 0 rgba(0,229,255,.06), 0 0 70px rgba(0,229,255,.22);
+      transform: rotateY(-18deg) rotateX(4deg);
+      transition: transform .4s;
+      text-align: center;
+    }
+    .book-3d:hover .book-cover { transform: rotateY(-5deg) rotateX(2deg); }
+    .bc-brand { font-size: .68rem; letter-spacing: .18em; color: var(--cyan); text-transform: uppercase; margin-bottom: 14px; }
+    .bc-wolf { width: 72px; height: 72px; margin: 0 auto 14px; }
+    .bc-wolf img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 18px rgba(0,229,255,.45)); }
+    .bc-title { font-family: 'Bebas Neue', sans-serif; font-size: 3.4rem; color: var(--cyan); line-height: .88; text-shadow: 0 0 36px rgba(0,229,255,.55); margin-bottom: 8px; }
+    .bc-sub { font-size: .72rem; color: #8db8d4; margin-bottom: 16px; }
+    .bc-bottom { font-size: .68rem; color: var(--gray); border-top: 1px solid rgba(0,229,255,.13); padding-top: 10px; }
+    .glow-badge {
+      position: absolute; top: -16px; right: -16px;
+      width: 80px; height: 80px; border-radius: 50%;
+      background: linear-gradient(135deg, #00e5ff, #0050a0);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-weight: 900; box-shadow: 0 0 28px rgba(0,229,255,.55);
+      border: 3px solid rgba(255,255,255,.2); line-height: 1;
+    }
+    .glow-badge .pct { font-size: 1.6rem; color: #000; }
+    .glow-badge .lbl { font-size: .5rem; color: #000; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+
+    /* Scroll arrow */
+    .scroll-arrow {
+      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px; opacity: .4;
+    }
+    @keyframes bobDown { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
+    .scroll-arrow { animation: bobDown 2s infinite; }
+    .scroll-arrow .sl { width: 1px; height: 30px; background: linear-gradient(to bottom, var(--cyan), transparent); }
+
+    /* ── STATS ────────────────────────────────────────────── */
+    .stats-strip {
+      background: var(--navy2);
+      border-top: 1px solid rgba(0,229,255,.1);
+      border-bottom: 1px solid rgba(0,229,255,.1);
+      padding: 32px 0;
+    }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat-item {
+      text-align: center; padding: 14px 20px;
+      border-right: 1px solid rgba(255,255,255,.05);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--cyan); line-height: 1; display: block; }
+    .stat-label { font-size: .74rem; color: var(--gray); margin-top: 4px; }
+
+    /* ── SECTION BASE ─────────────────────────────────────── */
+    section { padding: 88px 0; }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      letter-spacing: .04em; margin-top: 12px; line-height: 1.1;
+    }
+    .section-header p { color: var(--gray); max-width: 560px; margin: 14px auto 0; font-size: 1rem; }
+
+    /* ── CALLOUT ──────────────────────────────────────────── */
+    .callout {
+      background: linear-gradient(135deg, rgba(0,50,100,.45), rgba(0,229,255,.04));
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 10px 10px 0;
+      padding: 22px 26px;
+      margin: 28px 0;
+    }
+    .callout p { font-size: 1.05rem; font-weight: 600; line-height: 1.65; }
+    .callout p em { color: var(--cyan); font-style: normal; }
+
+    /* ── PAIN ─────────────────────────────────────────────── */
+    .pain { background: var(--navy2); }
+    .pain-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .pain-card {
+      background: linear-gradient(145deg, rgba(255,40,40,.07), rgba(255,40,40,.02));
+      border: 1px solid rgba(255,60,60,.18);
+      border-radius: 12px; padding: 26px;
+      transition: transform .2s, border-color .2s;
+    }
+    .pain-card:hover { transform: translateY(-4px); border-color: rgba(255,60,60,.38); }
+    .pain-icon { font-size: 1.9rem; margin-bottom: 12px; }
+    .pain-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .pain-card p { font-size: .88rem; color: var(--gray); line-height: 1.62; }
+
+    /* ── FOR SECTION ──────────────────────────────────────── */
+    .for-section { background: var(--navy); }
+    .for-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    .for-card {
+      background: linear-gradient(145deg, rgba(0,40,80,.55), rgba(0,20,50,.55));
+      border: 1px solid rgba(0,229,255,.14);
+      border-radius: 14px; padding: 28px;
+    }
+    .for-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+    .for-list, .not-for-list { list-style: none; }
+    .for-list li, .not-for-list li {
+      display: flex; align-items: flex-start; gap: 11px;
+      padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.05);
+      font-size: .92rem; line-height: 1.5;
+    }
+    .for-list li:last-child, .not-for-list li:last-child { border-bottom: none; }
+    .check { color: var(--cyan); font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
+    .cross { color: var(--danger); font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
+    .for-note {
+      margin-top: 22px; padding: 16px 18px;
+      background: rgba(0,229,255,.05); border-radius: 10px;
+      border: 1px solid rgba(0,229,255,.14);
+    }
+    .for-note p { font-size: .88rem; line-height: 1.62; color: #cdd9e8; }
+    .for-note strong { color: var(--cyan); }
+
+    /* ── METHOD ───────────────────────────────────────────── */
+    .method { background: var(--navy2); }
+
+    /* Desktop: horizontal timeline */
+    .method-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      position: relative;
+    }
+    .method-steps::before {
+      content: '';
+      position: absolute; top: 35px; left: 10%; width: 80%; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    }
+    .step { text-align: center; padding: 0 10px; position: relative; }
+    .step-num {
+      width: 70px; height: 70px; border-radius: 50%;
+      background: var(--navy); border: 2px solid var(--cyan);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--cyan);
+      margin: 0 auto 14px; box-shadow: 0 0 18px rgba(0,229,255,.28); position: relative; z-index: 1;
+    }
+    .step-title { font-size: .88rem; font-weight: 700; margin-bottom: 6px; }
+    .step-desc { font-size: .76rem; color: var(--gray); line-height: 1.5; }
+    .step-arrow { position: absolute; top: 21px; right: -8px; color: var(--cyan); font-size: 1.1rem; z-index: 2; }
+
+    /* ── CONTENT ──────────────────────────────────────────── */
+    .content-section { background: var(--navy); }
+    .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+    .content-list { list-style: none; }
+    .content-item { display: flex; gap: 14px; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.05); }
+    .content-item:last-child { border-bottom: none; }
+    .content-num {
+      width: 30px; height: 30px; border-radius: 7px;
+      background: rgba(0,229,255,.1); border: 1px solid rgba(0,229,255,.28);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .72rem; font-weight: 800; color: var(--cyan); flex-shrink: 0;
+    }
+    .ci-text h4 { font-size: .92rem; font-weight: 700; margin-bottom: 3px; }
+    .ci-text p { font-size: .8rem; color: var(--gray); line-height: 1.5; }
+
+    /* ── TESTIMONIALS ─────────────────────────────────────── */
+    .testimonials { background: var(--navy2); }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .tcard {
+      background: linear-gradient(145deg, rgba(0,50,100,.28), rgba(0,20,50,.28));
+      border: 1px solid rgba(0,229,255,.11); border-radius: 14px; padding: 26px;
+      transition: border-color .2s, transform .2s;
+    }
+    .tcard:hover { border-color: rgba(0,229,255,.3); transform: translateY(-4px); }
+    .stars { color: var(--gold); font-size: .95rem; margin-bottom: 12px; letter-spacing: 2px; }
+    .tcard p { font-size: .88rem; color: #cdd9e8; line-height: 1.65; margin-bottom: 18px; font-style: italic; }
+    .tcard-author { display: flex; align-items: center; gap: 11px; }
+    .tcard-avatar {
+      width: 42px; height: 42px; border-radius: 50%; background: var(--wolf);
+      border: 2px solid rgba(0,229,255,.28);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: .82rem; color: var(--cyan); flex-shrink: 0;
+    }
+    .tcard-name { font-weight: 700; font-size: .88rem; }
+    .tcard-role { font-size: .73rem; color: var(--gray); }
+
+    /* ── CTA / OFERTA ─────────────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(135deg, #050d1a 0%, #071828 50%, #050d1a 100%);
+      border-top: 1px solid rgba(0,229,255,.14);
+      border-bottom: 1px solid rgba(0,229,255,.14);
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,229,255,.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-inner { text-align: center; max-width: 680px; margin: 0 auto; }
+    .cta-inner h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
+      letter-spacing: .03em; margin: 14px 0 20px; line-height: 1.05;
+    }
+    .cta-inner > p { font-size: 1rem; color: #cdd9e8; margin-bottom: 36px; }
+
+    .price-box {
+      background: linear-gradient(145deg, rgba(0,40,80,.68), rgba(0,20,50,.68));
+      border: 2px solid rgba(0,229,255,.28);
+      border-radius: 16px; padding: 36px;
+      margin-bottom: 28px; position: relative; overflow: hidden;
+    }
+    .price-box::after {
+      content: 'MAIS VENDIDO';
+      position: absolute; top: 18px; right: -28px;
+      background: var(--cyan); color: #000;
+      font-size: .62rem; font-weight: 800; letter-spacing: .1em;
+      padding: 4px 42px; transform: rotate(45deg);
+    }
+    .price-from { text-decoration: line-through; color: var(--gray); font-size: .88rem; margin-bottom: 4px; }
+    .price-now { font-family: 'Bebas Neue', sans-serif; font-size: 3.6rem; color: var(--cyan); line-height: 1; margin-bottom: 4px; }
+    .price-note { font-size: .8rem; color: var(--gray); margin-bottom: 26px; }
+    .price-features { list-style: none; margin-bottom: 26px; text-align: left; }
+    .price-features li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: .9rem; padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .price-features li:last-child { border-bottom: none; }
+    .price-features .ic { color: var(--cyan); flex-shrink: 0; }
+    .guarantee-note {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 8px 14px;
+      background: rgba(0,229,255,.04); border: 1px solid rgba(0,229,255,.14);
+      border-radius: 8px; padding: 13px 16px;
+      font-size: .82rem; color: #cdd9e8; margin-top: 18px; text-align: center;
+    }
+
+    /* ── FAQ ──────────────────────────────────────────────── */
+    .faq { background: var(--navy); }
+    .faq-list { max-width: 740px; margin: 0 auto; }
+    .faq-item { border: 1px solid rgba(255,255,255,.07); border-radius: 10px; margin-bottom: 10px; overflow: hidden; }
+    .faq-q {
+      width: 100%; background: rgba(0,30,60,.5); border: none;
+      color: var(--white); font-size: .92rem; font-weight: 600;
+      padding: 18px 20px; text-align: left; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      transition: background .2s; min-height: 56px;
+    }
+    .faq-q:hover { background: rgba(0,40,80,.5); }
+    .faq-q.open { background: rgba(0,40,80,.6); color: var(--cyan); }
+    .faq-q .chev { transition: transform .25s; flex-shrink: 0; }
+    .faq-q.open .chev { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .3s ease, padding .3s;
+      padding: 0 20px; font-size: .88rem; color: #aabbd0; line-height: 1.72;
+    }
+    .faq-a.open { max-height: 400px; padding: 14px 20px 18px; }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    footer {
+      background: #030810;
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding: 44px 0 28px;
+    }
+    .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+    .footer-disclaimer { font-size: .76rem; color: var(--gray); max-width: 600px; line-height: 1.62; }
+    .footer-copy { font-size: .73rem; color: rgba(255,255,255,.22); }
+
+    /* ── FLOATING CTA ─────────────────────────────────────── */
+    .floating-cta {
+      position: fixed; bottom: 24px; right: 24px; z-index: 200;
+      transform: translateY(90px); opacity: 0;
+      transition: transform .35s, opacity .35s;
+    }
+    .floating-cta.visible { transform: none; opacity: 1; }
+
+    /* ══════════════════════════════════════════════════════════
+       RESPONSIVE — TABLET  ≤ 900px
+    ══════════════════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      section { padding: 72px 0; }
+      .section-header { margin-bottom: 44px; }
+
+      /* hero */
+      .hero { padding: 64px 0 56px; min-height: auto; }
+      .hero-grid { grid-template-columns: 1fr; gap: 0; }
+      .hero-visual { display: none; }
+      .scroll-arrow { display: none; }
+
+      /* stats: 2×2 */
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(3),
+      .stat-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,.05); }
+
+      /* pain */
+      .pain-cards { grid-template-columns: 1fr; gap: 14px; }
+
+      /* for */
+      .for-grid { grid-template-columns: 1fr; gap: 20px; }
+
+      /* method: vertical timeline */
+      .method-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        position: static;
+      }
+      .method-steps::before { display: none; }
+      .step {
+        display: flex; align-items: flex-start; gap: 18px;
+        text-align: left; padding: 20px 0;
+        border-bottom: 1px solid rgba(255,255,255,.06);
+        position: relative;
+      }
+      .step:last-child { border-bottom: none; }
+      .step-num { width: 52px; height: 52px; min-width: 52px; font-size: 1.25rem; margin: 0; }
+      .step-title { font-size: .95rem; margin-bottom: 4px; }
+      .step-desc { font-size: .82rem; }
+      .step-arrow { display: none; }
+
+      /* content */
+      .content-grid { grid-template-columns: 1fr; gap: 36px; }
+
+      /* testimonials */
+      .testimonial-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       RESPONSIVE — MOBILE  ≤ 600px
+    ══════════════════════════════════════════════════════════ */
+    @media (max-width: 600px) {
+      :root { --header-h: 58px; }
+      section { padding: 56px 0; }
+      .section-header { margin-bottom: 36px; }
+
+      /* urgency bar: hide middle block on very small */
+      .urgency-bar { font-size: .7rem; padding: 7px 12px; }
+      .urgency-hide { display: none; }
+
+      /* topbar */
+      .logo-text { font-size: 1.1rem; }
+      .topbar-cta { padding: 9px 14px; font-size: .76rem; min-height: 38px; }
+
+      /* hero */
+      .hero { padding: 52px 0 44px; }
+      .hero h1 { font-size: clamp(2.5rem, 10vw, 3.2rem); }
+      .hero h1 .number { font-size: clamp(4rem, 18vw, 5rem); }
+      .hero-sub { font-size: .95rem; margin-bottom: 28px; }
+      .hero-ctas { flex-direction: column; gap: 12px; margin-bottom: 32px; }
+      .hero-ctas .btn-primary,
+      .hero-ctas .btn-secondary { width: 100%; font-size: .95rem; padding: 16px 20px; }
+
+      /* social proof */
+      .hero-social-proof { padding-top: 20px; gap: 12px; }
+      .sp-text { font-size: .78rem; }
+
+      /* stats */
+      .stats-strip { padding: 24px 0; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat-item { padding: 12px 10px; }
+      .stat-number { font-size: 2.2rem; }
+      .stat-label { font-size: .68rem; }
+
+      /* callout */
+      .callout { padding: 18px 16px; }
+      .callout p { font-size: .95rem; }
+
+      /* for cards */
+      .for-card { padding: 20px; }
+      .for-card h3 { font-size: 1rem; }
+      .for-list li, .not-for-list li { font-size: .88rem; padding: 11px 0; }
+
+      /* method */
+      .step-num { width: 46px; height: 46px; min-width: 46px; font-size: 1.1rem; }
+
+      /* content */
+      .content-grid { gap: 28px; }
+      .content-section .btn-primary { width: 100%; font-size: .95rem; }
+
+      /* price box */
+      .price-box { padding: 24px 18px; }
+      .price-box::after { display: none; }
+      .price-now { font-size: 3rem; }
+      .price-features li { font-size: .85rem; }
+      .guarantee-note { font-size: .78rem; padding: 12px 14px; }
+
+      /* cta inner */
+      .cta-inner > p { font-size: .92rem; margin-bottom: 28px; }
+
+      /* faq */
+      .faq-q { font-size: .86rem; padding: 16px 14px; }
+      .faq-a { padding: 0 14px; font-size: .84rem; }
+      .faq-a.open { padding: 12px 14px 16px; }
+
+      /* floating cta */
+      .floating-cta { bottom: 14px; right: 12px; left: 12px; }
+      .floating-cta .btn-primary { width: 100%; font-size: .88rem; padding: 15px 16px; min-height: 50px; }
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  ≤ 380px
+    ══════════════════════════════════════════════════════════ */
+    @media (max-width: 380px) {
+      .logo-text { display: none; }
+      .topbar-cta { font-size: .72rem; padding: 9px 12px; }
+      .urgency-bar .urgency-long { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- ═══════════════════════ URGENCY BAR -->
+<div class="urgency-bar">
+  ⚡ <span>+3.200 pessoas</span> já saíram das dívidas com o MD-90
+  <span class="urgency-sep urgency-hide">|</span>
+  <span class="urgency-hide urgency-long"><span>Acesso imediato</span> após a compra</span>
+</div>
+
+<!-- ═══════════════════════ TOPBAR -->
+<header class="topbar">
+  <div class="container">
+    <div class="inner">
+      <div class="logo-wrap">
+        <img src="logo_wolf_circle.png" alt="SigaLearning" width="38" height="38" />
+        <div class="logo-text">SIGA<span>LEARNING</span></div>
+      </div>
+      <a href="#comprar" class="btn-primary topbar-cta">Quero o MD-90 →</a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════ HERO -->
+<section class="hero" id="inicio">
+  <div class="chess-bg" aria-hidden="true">♔</div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge fade-up">
+          <span class="tag">Prof. Júnior Cardoso · SigaLearning</span>
+        </div>
+        <h1 class="fade-up d1">
+          MÉTODO DE
+          <span class="number">MD90</span>
+          NEGOCIAÇÃO
+        </h1>
+        <p class="hero-sub fade-up d2">
+          Aprenda a negociar dívidas com <strong>até 90% de desconto</strong> usando o método que já transformou a vida financeira de milhares de brasileiros.<br /><br />
+          <em style="color:var(--cyan);font-style:normal;">Os juros é simples: quem entende ganha, quem não entende paga. De qual lado você quer estar?</em>
+        </p>
+        <div class="hero-ctas fade-up d3">
+          <a href="https://pay.kiwify.com.br/IkSsgE4" target="_blank" rel="noopener" class="btn-primary pulse">Garantir meu E-book →</a>
+          <a href="#metodo" class="btn-secondary">Ver o método</a>
+        </div>
+        <div class="hero-social-proof fade-up d4">
+          <div class="avatars">
+            <span>MM</span><span>CL</span><span>RS</span><span>AP</span><span>+</span>
+          </div>
+          <div class="sp-text">
+            <strong>+3.200 alunos</strong> já negociaram dívidas com o MD-90
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual fade-up d2">
+        <div class="book-3d">
+          <img src="ebook_cover.jpeg" alt="E-book MD-90 Método de Negociação" style="width:100%;border-radius:10px;box-shadow:-8px 8px 0 rgba(0,229,255,.13),-16px 16px 0 rgba(0,229,255,.06),0 0 70px rgba(0,229,255,.28);transform:rotateY(-8deg) rotateX(3deg);transition:transform .4s;" onmouseover="this.style.transform='rotateY(-2deg) rotateX(1deg)'" onmouseout="this.style.transform='rotateY(-8deg) rotateX(3deg)'" />
+          <div class="glow-badge" aria-hidden="true">
+            <div class="pct">90%</div>
+            <div class="lbl">desconto</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-arrow" aria-hidden="true">
+    <div class="sl"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STATS -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <span class="stat-number" data-count="75">0</span>
+        <div class="stat-label">Milhões de negativados no Brasil</div>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number" data-count="90">0</span>
+        <div class="stat-label">% de desconto possível</div>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number" data-count="3200">0</span>
+        <div class="stat-label">Alunos que usaram o método</div>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number" data-count="15">0</span>
+        <div class="stat-label">Anos de experiência do Prof. Jr.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════ DOR -->
+<section class="pain" id="problema">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Você se identifica?</span>
+      <h2>VOCÊ <span class="highlight">PAGA, PAGA, PAGA</span>...<br/>E A DÍVIDA NÃO DESCE?</h2>
+      <p>O problema pode não ser falta de caráter. Pode ser falta de estratégia.</p>
+    </div>
+    <div class="pain-cards">
+      <div class="pain-card reveal">
+        <div class="pain-icon">📱</div>
+        <h3>Ligações que não param</h3>
+        <p>Cobranças todo dia, horários inconvenientes, pressão constante. Você não consegue mais ver um número desconhecido sem ansiedade.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">💳</div>
+        <h3>Pagou o mínimo e piorou</h3>
+        <p>Pagou o mínimo, parcelou a dívida, pegou empréstimo... e no fim do mês deve mais do que antes. O ciclo não tem fim.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">🏠</div>
+        <h3>Vergonha em casa</h3>
+        <p>"Não sei mais de onde tirar." "Todo mês entra e some." A dívida não fica só no banco. Ela entra em casa.</p>
+      </div>
+    </div>
+    <div class="callout reveal">
+      <p>O Banco Central apontou em 2026 que o <em>ônus de endividamento estava alto em todas as faixas de renda</em>. Você não está sozinho. O jogo foi feito para você perder. <em>Mas dá pra mudar as regras.</em></p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════ PARA QUEM É -->
+<section class="for-section" id="para-quem">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Perfil do aluno</span>
+      <h2>ESSE E-BOOK É <span class="highlight">PARA VOCÊ</span> SE...</h2>
+      <p style="color:var(--cyan);font-weight:700;font-size:1.1rem;margin-top:14px;letter-spacing:.04em;">NÓS TEMOS O MANUAL PRÁTICO PARA VOCÊ VENCER O JOGO</p>
+    </div>
+    <div class="for-grid">
+      <div class="for-card reveal">
+        <h3>✅ Para quem é</h3>
+        <ul class="for-list">
+          <li><span class="check">✓</span> Tem dívida em cartão, cheque especial ou empréstimo pessoal</li>
+          <li><span class="check">✓</span> Já tentou resolver pelo app do banco e não funcionou</li>
+          <li><span class="check">✓</span> Quer negociar com consciência, não no desespero</li>
+          <li><span class="check">✓</span> Está cansado de pagar juros abusivos todo mês</li>
+          <li><span class="check">✓</span> Quer entender o jogo antes de falar com o banco</li>
+          <li><span class="check">✓</span> Busca alívio, controle e dignidade financeira</li>
+        </ul>
+      </div>
+      <div class="for-card reveal">
+        <h3>❌ Não é para quem...</h3>
+        <ul class="not-for-list">
+          <li><span class="cross">✗</span> Quer dar calote ou praticar fraude</li>
+          <li><span class="cross">✗</span> Busca milagre financeiro sem esforço</li>
+          <li><span class="cross">✗</span> Não está disposto a aprender e aplicar</li>
+          <li><span class="cross">✗</span> Quer solução mágica da noite pro dia</li>
+        </ul>
+        <div class="for-note">
+          <p><strong>Atenção:</strong> O MD-90 é para quem quer pagar o valor justo. Você não é desonesto — você só entrou num jogo sem manual.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════ MÉTODO -->
+<section class="method" id="metodo">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">O Método</span>
+      <h2>O PASSO A PASSO DO <span class="highlight">MD-90</span></h2>
+      <p>Método estruturado para você saber exatamente o que fazer, na ordem certa, sem improvisar.</p>
+    </div>
+    <div class="method-steps reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">O Gerente do Banco Não É Seu Amigo</div>
+          <div class="step-desc">Entenda o papel do banco e pare de negociar no campo deles.</div>
+        </div>
+        <span class="step-arrow" aria-hidden="true">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Ligação</div>
+          <div class="step-desc">Saiba exatamente o que falar, para quem falar e quando falar.</div>
+        </div>
+        <span class="step-arrow" aria-hidden="true">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Negociação Estratégica</div>
+          <div class="step-desc">Use informação como ferramenta. Nunca negocie no desespero.</div>
+        </div>
+        <span class="step-arrow" aria-hidden="true">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-title">Recolhimento de Dados</div>
+          <div class="step-desc">Colete, registre e protocole tudo. Dados são poder na negociação.</div>
+        </div>
+        <span class="step-arrow" aria-hidden="true">→</span>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <div>
+          <div class="step-title">Proposta</div>
+          <div class="step-desc">Apresente a proposta certa, no momento certo, e feche o acordo.</div>
+        </div>
+      </div>
+    </div>
+    <div class="callout reveal" style="margin-top:44px;text-align:center;">
+      <p style="font-size:1.1rem;">"O crédito é um ótimo servo, mas um péssimo patrão — <em>aprenda a usar ele a seu favor.</em>"</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════ CONTEÚDO -->
+<section class="content-section" id="conteudo">
+  <div class="container">
+    <div class="content-grid">
+      <div class="reveal">
+        <span class="tag">Conteúdo do E-book</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,4vw,3rem);letter-spacing:.04em;margin:14px 0 20px;line-height:1.1;">
+          TUDO O QUE VOCÊ<br/><span class="highlight">PRECISA SABER</span><br/>PARA NEGOCIAR
+        </h2>
+        <p style="color:var(--gray);line-height:1.72;font-size:.93rem;margin-bottom:26px;">
+          Sem teoria desnecessária. Sem linguagem acadêmica. Manual prático para usar hoje mesmo.
+        </p>
+        <a href="https://pay.kiwify.com.br/IkSsgE4" target="_blank" rel="noopener" class="btn-primary">Quero o E-book Agora →</a>
+      </div>
+      <div class="reveal">
+        <ul class="content-list">
+          <li class="content-item">
+            <div class="content-num">01</div>
+            <div class="ci-text">
+              <h4>Como o banco pensa (e como você deve pensar)</h4>
+            </div>
+          </li>
+          <li class="content-item">
+            <div class="content-num">02</div>
+            <div class="ci-text">
+              <h4>Os principais erros</h4>
+            </div>
+          </li>
+          <li class="content-item">
+            <div class="content-num">03</div>
+            <div class="ci-text">
+              <h4>Script completo de negociação</h4>
+            </div>
+          </li>
+          <li class="content-item">
+            <div class="content-num">04</div>
+            <div class="ci-text">
+              <h4>Proteção jurídica e patrimonial</h4>
+            </div>
+          </li>
+          <li class="content-item">
+            <div class="content-num">05</div>
+            <div class="ci-text">
+              <h4>Lei do Superendividamento</h4>
+            </div>
+          </li>
+          <li class="content-item">
+            <div class="content-num">06</div>
+            <div class="ci-text">
+              <h4>Passo a passo pós-acordo</h4>
+            </div>
+          </li>
+          <li class="content-item">
+            <div class="content-num">07</div>
+            <div class="ci-text">
+              <h4>Possibilidades de recuperação de valores pagos</h4>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════ AUTOR -->
+<section class="for-section" id="autor">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Quem vai te ensinar</span>
+      <h2>CONHEÇA O <span class="highlight">PROF. JÚNIOR CARDOSO</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:center;" class="reveal autor-grid">
+      <div style="text-align:center;">
+        <img src="autor_foto.jpeg" alt="Prof. Júnior Cardoso" style="width:260px;height:260px;object-fit:cover;border-radius:50%;border:3px solid var(--cyan);box-shadow:0 0 40px rgba(0,229,255,.28);margin:0 auto 18px;" />
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.06em;">Prof. Júnior Cardoso</div>
+        <div style="font-size:.8rem;color:var(--cyan);margin-top:4px;letter-spacing:.08em;text-transform:uppercase;">SigaLearning</div>
+      </div>
+      <div>
+        <p style="font-size:.97rem;line-height:1.75;color:#cdd9e8;margin-bottom:24px;">
+          Conhecido como <strong style="color:var(--white);">OPROFESSOR</strong>, Júnior Cardoso é professor de matemática há mais de 15 anos, cristão, especialista em finanças, mercado financeiro e planejamento estratégico. Autor de <strong style="color:var(--white);">5 livros educacionais</strong> e fundador da SigaLearning, dedica sua vida à formação de líderes e mentores de alto impacto.
+        </p>
+        <p style="font-size:.97rem;line-height:1.75;color:#cdd9e8;margin-bottom:24px;">
+          É fundador e CEO da <strong style="color:var(--white);">A Liga Empresarial</strong> — uma das maiores comunidades empresariais cristãs do Brasil —, integrando crescimento financeiro, desenvolvimento estratégico e princípios espirituais para ensinar empresários a <em style="color:var(--cyan);font-style:normal;">ganhar mais, trabalhar menos, viver com propósito e ter uma empresa como legado</em>.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;">
+          <span style="background:rgba(0,229,255,.09);border:1px solid rgba(0,229,255,.25);color:var(--cyan);font-size:.75rem;font-weight:700;padding:5px 12px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;">+15 anos de experiência</span>
+          <span style="background:rgba(0,229,255,.09);border:1px solid rgba(0,229,255,.25);color:var(--cyan);font-size:.75rem;font-weight:700;padding:5px 12px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;">5 livros publicados</span>
+          <span style="background:rgba(0,229,255,.09);border:1px solid rgba(0,229,255,.25);color:var(--cyan);font-size:.75rem;font-weight:700;padding:5px 12px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;">Life Coach Internacional</span>
+          <span style="background:rgba(0,229,255,.09);border:1px solid rgba(0,229,255,.25);color:var(--cyan);font-size:.75rem;font-weight:700;padding:5px 12px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;">John Maxwell Team</span>
+          <span style="background:rgba(0,229,255,.09);border:1px solid rgba(0,229,255,.25);color:var(--cyan);font-size:.75rem;font-weight:700;padding:5px 12px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;">+3.200 alunos</span>
+        </div>
+        <a href="https://wa.me/556192280821" target="_blank" rel="noopener" class="btn-primary" style="gap:12px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar com o Prof. Júnior
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 900px) {
+    .autor-grid { grid-template-columns: 1fr !important; gap: 32px !important; text-align: center; }
+    .autor-grid > div:last-child { text-align: left; }
+  }
+  @media (max-width: 600px) {
+    .autor-grid img { width: 200px !important; height: 200px !important; }
+  }
+</style>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════ DEPOIMENTOS -->
+<section class="testimonials" id="depoimentos">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Resultados reais</span>
+      <h2>QUEM JÁ USOU O <span class="highlight">MD-90</span></h2>
+      <p>Pessoas reais que viraram o jogo. Sem milagre — com método.</p>
+    </div>
+    <div class="testimonial-grid">
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Devia R$ 18 mil no cartão. Segui o método do Prof. Júnior e consegui quitar por R$ 4.200. O banco aceitou na segunda ligação."</p>
+        <img src="resultado_mariana.png" alt="Resultado real - Mariana" style="width:100%;border-radius:8px;margin:14px 0;border:1px solid rgba(0,229,255,.2);" />
+        <div class="tcard-author">
+          <div class="tcard-avatar">MC</div>
+          <div>
+            <div class="tcard-name">Mariana C.</div>
+            <div class="tcard-role">São Paulo, SP · Auxiliar Administrativa</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Antes eu tinha medo de ligar pro banco. Depois do MD-90 aprendi a protocolar, fui pro setor certo e fechei com 76% de desconto."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">RS</div>
+          <div>
+            <div class="tcard-name">Roberto S.</div>
+            <div class="tcard-role">Belo Horizonte, MG · MEI</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Meu marido e eu brigávamos por causa das dívidas. O método nos deu um plano. Em 3 meses limpamos o nome dos dois."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">AP</div>
+          <div>
+            <div class="tcard-name">Ana Paula R.</div>
+            <div class="tcard-role">Fortaleza, CE · CLT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════ OFERTA -->
+<section class="cta-section" id="comprar">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="reveal">
+        <span class="tag">Oferta especial</span>
+        <h2>CHEGA DE NEGOCIAR<br/><span class="highlight">NO ESCURO</span></h2>
+        <p>Tenha o método completo em mãos. Sem improvisação. Sem medo. Com estratégia.</p>
+      </div>
+
+      <div class="price-box reveal">
+        <ul class="price-features" style="margin-bottom:18px;">
+          <li style="justify-content:space-between;">
+            <span style="display:flex;align-items:center;gap:10px;"><span class="ic">✓</span> Manual completo passo a passo</span>
+            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 97,00</span>
+          </li>
+          <li style="justify-content:space-between;">
+            <span style="display:flex;align-items:center;gap:10px;"><span class="ic">✓</span> Aula completa do manual</span>
+            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 197,00</span>
+          </li>
+          <li style="justify-content:space-between;">
+            <span style="display:flex;align-items:center;gap:10px;"><span class="ic">✓</span> Script do método</span>
+            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 97,00</span>
+          </li>
+          <li style="justify-content:space-between;">
+            <span style="display:flex;align-items:center;gap:10px;"><span class="ic">✓</span> Planilha de controle financeiro</span>
+            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 97,00</span>
+          </li>
+          <li style="justify-content:space-between;">
+            <span style="display:flex;align-items:center;gap:10px;"><span class="ic">✓</span> Aula da planilha de controle financeiro</span>
+            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 147,00</span>
+          </li>
+        </ul>
+        <div style="border-top:1px solid rgba(0,229,255,.18);padding-top:16px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:.88rem;color:var(--gray);">Valor total</span>
+          <span style="text-decoration:line-through;color:var(--gray);font-size:1rem;font-weight:700;">R$ 635,00</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;">
+          <span style="font-size:1rem;font-weight:700;color:var(--white);">Somente hoje por</span>
+          <div class="price-now" style="margin:0;">R$ 67,<span style="font-size:1.9rem;">00</span></div>
+        </div>
+        <div class="price-note" style="text-align:right;margin-bottom:22px;">Pagamento único &nbsp;·&nbsp; Acesso imediato</div>
+        <a href="https://pay.kiwify.com.br/IkSsgE4" target="_blank" rel="noopener" class="btn-primary pulse" style="width:100%;font-size:1.05rem;padding:20px;">
+          GARANTIR TODO MATERIAL AGORA →
+        </a>
+        <div class="guarantee-note">
+          <span>🔒 Compra 100% segura</span>
+          <span>🔄 7 dias de garantia</span>
+          <span>⚡ Acesso imediato</span>
+        </div>
+      </div>
+
+      <div class="callout reveal">
+        <p style="font-size:1.05rem;text-align:center;">
+          "Daqui a 6 meses, essa dívida estará <em>menor</em>... ou <em style="color:var(--danger);">maior</em>?<br/>A escolha é sua. O método já existe."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════ FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Dúvidas frequentes</span>
+      <h2>PERGUNTAS <span class="highlight">FREQUENTES</span></h2>
+    </div>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>O MD-90 ensina a dar calote?</span>
+          <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a" role="region">
+          Não. O MD-90 ensina a negociar com consciência, protocolo e estratégia. O objetivo é pagar o valor justo, não se esquivar da dívida. Você tem o direito de negociar — o banco faz isso todos os dias.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>Funciona para cartão, cheque especial e empréstimo?</span>
+          <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a" role="region">
+          Sim. O método foi desenvolvido especificamente para os tipos de dívida mais comuns: cartão de crédito, cheque especial, empréstimo pessoal e crédito rotativo — exatamente os produtos onde os bancos cobram os juros mais altos.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>Preciso contratar advogado para aplicar o método?</span>
+          <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a" role="region">
+          Não. O MD-90 foi feito para qualquer pessoa aplicar sozinha, sem intermediários. Todo o processo é feito diretamente com o banco, usando o roteiro certo, na ordem certa.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>Quanto tempo leva para aplicar o método?</span>
+          <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a" role="region">
+          A leitura do e-book leva de 2 a 3 horas. Depois disso, você pode ligar para o banco e aplicar o método no mesmo dia. O acordo pode ser fechado em uma ou duas ligações.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>Como recebo o e-book após a compra?</span>
+          <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a" role="region">
+          Acesso imediato por e-mail após a confirmação do pagamento. Você recebe o link de download do PDF e o acesso ao grupo de suporte diretamente na sua caixa de entrada.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>Tem garantia?</span>
+          <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a" role="region">
+          Sim. 7 dias de garantia incondicional. Se por qualquer motivo o e-book não atender às suas expectativas, basta enviar um e-mail e devolvemos 100% do seu dinheiro, sem perguntas.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="logo-wrap">
+        <img src="logo_wolf_circle.png" alt="SigaLearning" width="36" height="36" />
+        <div class="logo-text">SIGA<span>LEARNING</span></div>
+      </div>
+      <p class="footer-disclaimer">
+        Este produto é um e-book educacional sobre técnicas de negociação financeira. Os resultados são individuais e podem variar. O MD-90 não promete resultados garantidos, não incentiva calotes e não substitui assessoria jurídica ou financeira profissional.
+      </p>
+      <p class="footer-copy">© 2025 SigaLearning · Prof. Júnior Cardoso · Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════ FLOATING CTA -->
+<div class="floating-cta" id="floatingCta" aria-hidden="true">
+  <a href="https://pay.kiwify.com.br/IkSsgE4" target="_blank" rel="noopener" class="btn-primary" tabindex="-1">Garantir MD-90 por R$67 →</a>
+</div>
+
+<!-- ═══════════════════════ SCRIPTS -->
+<script>
+  /* ── PARTICLES ────────────────────────────── */
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let W, H, pts = [];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const COUNT = window.innerWidth < 600 ? 40 : 80;
+  for (let i = 0; i < COUNT; i++) {
+    pts.push({
+      x: Math.random() * W, y: Math.random() * H,
+      r: Math.random() * 1.4 + .3,
+      vx: (Math.random() - .5) * .28,
+      vy: (Math.random() - .5) * .28,
+      a: Math.random() * .35 + .05,
+    });
+  }
+
+  function drawPts() {
+    ctx.clearRect(0, 0, W, H);
+    pts.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0,229,255,${p.a})`;
+      ctx.fill();
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+    });
+    requestAnimationFrame(drawPts);
+  }
+  drawPts();
+
+  /* ── SCROLL REVEAL ────────────────────────── */
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: .12, rootMargin: '0px 0px -30px 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* ── FLOATING CTA ─────────────────────────── */
+  const fcta = document.getElementById('floatingCta');
+  const fctaLink = fcta.querySelector('a');
+  let shown = false;
+  window.addEventListener('scroll', () => {
+    const next = window.scrollY > 480;
+    if (next !== shown) {
+      shown = next;
+      fcta.classList.toggle('visible', shown);
+      fcta.setAttribute('aria-hidden', String(!shown));
+      fctaLink.tabIndex = shown ? 0 : -1;
+    }
+  }, { passive: true });
+
+  /* ── COUNTERS ─────────────────────────────── */
+  function animCount(el, target) {
+    let v = 0;
+    const suffix = target >= 1000 ? '+' : target === 90 ? '%' : target === 75 ? 'M+' : '';
+    const step = target / 55;
+    const t = setInterval(() => {
+      v += step;
+      if (v >= target) { v = target; clearInterval(t); }
+      let d = Math.floor(v);
+      el.textContent = (target >= 1000 ? d.toLocaleString('pt-BR') : d) + suffix;
+    }, 22);
+  }
+  const cntObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animCount(e.target, parseInt(e.target.dataset.count));
+        cntObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: .5 });
+  document.querySelectorAll('[data-count]').forEach(el => cntObs.observe(el));
+
+  /* ── FAQ ──────────────────────────────────── */
+  function toggleFaq(btn) {
+    const ans = btn.nextElementSibling;
+    const wasOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(b => {
+      b.classList.remove('open');
+      b.setAttribute('aria-expanded', 'false');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if (!wasOpen) {
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      ans.classList.add('open');
+    }
+  }
+</script>
+</body>
+</html>
