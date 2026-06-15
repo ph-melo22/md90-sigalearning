@@ -637,12 +637,27 @@
       /* price box */
       .price-box { padding: 20px 16px; }
       .price-box::after { display: none; }
-      .price-features li { font-size: .82rem; flex-wrap: wrap; gap: 4px; }
-      .price-features li span:last-child { margin-left: auto; }
-      .price-now { font-size: 2.6rem !important; }
+      .price-features li {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+        padding: 10px 0;
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+      .price-features li > span:first-child { word-break: break-word; overflow-wrap: break-word; }
+      .price-features li > span:last-child {
+        color: var(--cyan) !important;
+        font-weight: 700 !important;
+        white-space: normal !important;
+        font-size: .82rem !important;
+        margin-left: 26px;
+      }
+      .price-now { font-size: 2.4rem !important; }
       .price-note { font-size: .75rem !important; }
       .guarantee-note { font-size: .76rem; padding: 12px 10px; flex-direction: column; gap: 6px; }
       .cta-section .btn-primary { font-size: .95rem !important; padding: 17px 16px !important; }
+      .cta-inner { padding: 0 4px; }
 
       /* cta inner */
       .cta-inner > p { font-size: .92rem; margin-bottom: 28px; }
@@ -664,6 +679,13 @@
       .logo-text { display: none; }
       .topbar-cta { font-size: .72rem; padding: 9px 12px; }
       .urgency-bar .urgency-long { display: none; }
+      .hero h1 { font-size: clamp(2.2rem, 9vw, 2.8rem); }
+      .hero h1 .number { font-size: clamp(3.4rem, 16vw, 4rem); }
+      .stat-number { font-size: 1.9rem; }
+      .price-box { padding: 16px 12px; }
+      .price-features li > span:last-child { margin-left: 22px; }
+      .price-now { font-size: 2rem !important; }
+      .cta-section .btn-primary { font-size: .88rem !important; padding: 15px 12px !important; }
     }
   </style>
 </head>
@@ -706,7 +728,9 @@
           DE DESCONTO.
         </h1>
         <p class="hero-sub fade-up d2">
-          Aprenda a negociar dívidas com <strong>até 90% de desconto</strong> usando o método que já transformou a vida financeira de milhares de brasileiros.<br /><br />
+          Aprenda a negociar dívidas com <strong>até 90% de desconto</strong> usando o método que já transformou a vida financeira de milhares de brasileiros.
+        </p>
+        <p class="hero-sub fade-up d2" style="margin-top:0;margin-bottom:28px;">
           <em style="color:var(--cyan);font-style:normal;">Os juros é simples: quem entende ganha, quem não entende paga. De qual lado você quer estar?</em>
         </p>
         <div class="hero-ctas fade-up d3">
