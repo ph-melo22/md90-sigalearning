@@ -8,6 +8,19 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>MD-90 | Método de Negociação de Dívidas — SigaLearning</title>
   <meta name="description" content="Aprenda a negociar dívidas com até 90% de desconto. Método comprovado do Prof. Júnior Cardoso — SigaLearning." />
+  <link rel="canonical" href="https://sigalearning.com.br/" />
+  <link rel="icon" href="logo_wolf_circle.png" type="image/png" />
+  <link rel="apple-touch-icon" href="logo_wolf_circle.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="MD-90 | Método de Negociação de Dívidas — SigaLearning" />
+  <meta property="og:description" content="Aprenda a negociar dívidas com até 90% de desconto. Método comprovado do Prof. Júnior Cardoso — SigaLearning." />
+  <meta property="og:url" content="https://sigalearning.com.br/" />
+  <meta property="og:image" content="https://sigalearning.com.br/ebook_cover.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MD-90 | Método de Negociação de Dívidas — SigaLearning" />
+  <meta name="twitter:description" content="Aprenda a negociar dívidas com até 90% de desconto. Método comprovado do Prof. Júnior Cardoso — SigaLearning." />
+  <meta name="twitter:image" content="https://sigalearning.com.br/ebook_cover.jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
@@ -467,6 +480,28 @@
     }
     .price-features li:last-child { border-bottom: none; }
     .price-features .ic { color: var(--cyan); flex-shrink: 0; }
+    .discount-badge-wrap { text-align: center; margin-bottom: 14px; }
+    .discount-badge {
+      display: inline-block;
+      background: rgba(255,68,68,.14);
+      border: 1px solid rgba(255,68,68,.45);
+      color: var(--danger);
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border-radius: 100px;
+    }
+    .countdown-wrap { text-align: center; margin-bottom: 20px; }
+    .countdown-label { font-size: .68rem; color: var(--gray); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 6px; }
+    .countdown {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem; color: var(--danger); letter-spacing: .05em; line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .countdown-sep { color: var(--gray); }
     .guarantee-note {
       display: flex; align-items: center; justify-content: center;
       flex-wrap: wrap; gap: 8px 14px;
@@ -656,6 +691,8 @@
       .price-now { font-size: 2.4rem !important; }
       .price-note { font-size: .75rem !important; }
       .guarantee-note { font-size: .76rem; padding: 12px 10px; flex-direction: column; gap: 6px; }
+      .discount-badge { font-size: .68rem; padding: 6px 14px; }
+      .countdown { font-size: 1.7rem; }
       .cta-section .btn-primary { font-size: .95rem !important; padding: 17px 16px !important; }
       .cta-inner { padding: 0 4px; }
 
@@ -685,6 +722,8 @@
       .price-box { padding: 16px 12px; }
       .price-features li > span:last-child { margin-left: 22px; }
       .price-now { font-size: 2rem !important; }
+      .countdown { font-size: 1.5rem; }
+      .discount-badge { font-size: .64rem; padding: 6px 12px; }
       .cta-section .btn-primary { font-size: .88rem !important; padding: 15px 12px !important; }
     }
   </style>
@@ -708,7 +747,7 @@
         <img src="logo_wolf_circle.png" alt="SigaLearning" width="38" height="38" />
         <div class="logo-text">SIGA<span>LEARNING</span></div>
       </div>
-      <a href="#comprar" class="btn-primary topbar-cta">Quero o MD-90 →</a>
+      <a href="https://pay.kiwify.com.br/6dTpLaM" target="_blank" rel="noopener" class="btn-primary topbar-cta">Quero o MD-90 →</a>
     </div>
   </div>
 </header>
@@ -747,7 +786,7 @@
 
       <div class="hero-visual fade-up d2">
         <div class="book-3d">
-          <img src="ebook_cover.jpeg" alt="E-book MD-90 Método de Negociação" style="width:100%;border-radius:10px;box-shadow:-8px 8px 0 rgba(0,229,255,.13),-16px 16px 0 rgba(0,229,255,.06),0 0 70px rgba(0,229,255,.28);transform:rotateY(-8deg) rotateX(3deg);transition:transform .4s;" onmouseover="this.style.transform='rotateY(-2deg) rotateX(1deg)'" onmouseout="this.style.transform='rotateY(-8deg) rotateX(3deg)'" />
+          <img src="ebook_cover.jpeg" alt="E-book MD-90 Método de Negociação" width="1024" height="1536" decoding="async" fetchpriority="high" style="width:100%;border-radius:10px;box-shadow:-8px 8px 0 rgba(0,229,255,.13),-16px 16px 0 rgba(0,229,255,.06),0 0 70px rgba(0,229,255,.28);transform:rotateY(-8deg) rotateX(3deg);transition:transform .4s;" onmouseover="this.style.transform='rotateY(-2deg) rotateX(1deg)'" onmouseout="this.style.transform='rotateY(-8deg) rotateX(3deg)'" />
         </div>
       </div>
     </div>
@@ -795,7 +834,7 @@
       <div class="tcard reveal">
         <div class="stars">★★★★★</div>
         <p>"Devia R$ 18 mil no cartão. Segui o método do Prof. Júnior e consegui quitar por R$ 4.200. O banco aceitou na segunda ligação."</p>
-        <img src="resultado_mariana.png" alt="Resultado real - Mariana" style="width:100%;border-radius:8px;margin:14px 0;border:1px solid rgba(0,229,255,.2);" />
+        <img src="resultado_mariana.png" alt="Resultado real - Mariana" width="327" height="155" loading="lazy" decoding="async" style="width:100%;border-radius:8px;margin:14px 0;border:1px solid rgba(0,229,255,.2);" />
         <div class="tcard-author">
           <div class="tcard-avatar">MC</div>
           <div>
@@ -807,7 +846,7 @@
       <div class="tcard reveal">
         <div class="stars">★★★★★</div>
         <p>"Antes eu tinha medo de ligar pro banco. Depois do MD-90 aprendi a protocolar, fui pro setor certo e fechei com 76% de desconto."</p>
-        <img src="resultado_anapauia.png" alt="Resultado real - Roberto" style="width:100%;border-radius:8px;margin:14px 0;border:1px solid rgba(0,229,255,.2);" />
+        <img src="resultado_anapauia.png" alt="Resultado real - Roberto" width="291" height="167" loading="lazy" decoding="async" style="width:100%;border-radius:8px;margin:14px 0;border:1px solid rgba(0,229,255,.2);" />
         <div class="tcard-author">
           <div class="tcard-avatar">RS</div>
           <div>
@@ -819,7 +858,7 @@
       <div class="tcard reveal">
         <div class="stars">★★★★★</div>
         <p>"Meu marido e eu brigávamos por causa das dívidas. O método nos deu um plano. Em 3 meses limpamos o nome dos dois."</p>
-        <img src="resultado_roberto.png" alt="Resultado real - Ana Paula" style="width:100%;border-radius:8px;margin:14px 0;border:1px solid rgba(0,229,255,.2);" />
+        <img src="resultado_roberto.png" alt="Resultado real - Ana Paula" width="345" height="198" loading="lazy" decoding="async" style="width:100%;border-radius:8px;margin:14px 0;border:1px solid rgba(0,229,255,.2);" />
         <div class="tcard-author">
           <div class="tcard-avatar">AP</div>
           <div>
@@ -1037,7 +1076,7 @@
     </div>
     <div style="display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:center;" class="reveal autor-grid">
       <div style="text-align:center;">
-        <img src="autor_foto.jpeg" alt="Prof. Júnior Cardoso" style="width:280px;height:280px;object-fit:cover;border-radius:16px;border:3px solid var(--cyan);box-shadow:0 0 40px rgba(0,229,255,.28);margin:0 auto 18px;" />
+        <img src="autor_foto.jpeg" alt="Prof. Júnior Cardoso" width="749" height="749" loading="lazy" decoding="async" style="width:280px;height:280px;object-fit:cover;border-radius:16px;border:3px solid var(--cyan);box-shadow:0 0 40px rgba(0,229,255,.28);margin:0 auto 18px;" />
         <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.06em;">Prof. Júnior Cardoso</div>
         <div style="font-size:.8rem;color:var(--cyan);margin-top:4px;letter-spacing:.08em;text-transform:uppercase;">SigaLearning</div>
       </div>
@@ -1077,35 +1116,52 @@
       </div>
 
       <div class="price-box reveal">
+        <div class="discount-badge-wrap">
+          <span class="discount-badge">🔥 Somente hoje com 90% de desconto</span>
+        </div>
+        <div class="countdown-wrap">
+          <div class="countdown-label">Essa oferta expira em</div>
+          <div class="countdown">
+            <span id="cd-min">10</span><span class="countdown-sep">:</span><span id="cd-sec">00</span>
+          </div>
+        </div>
         <ul class="price-features" style="margin-bottom:18px;">
           <li style="justify-content:space-between;">
             <span style="display:flex;align-items:center;gap:10px;"><span class="ic">✓</span> Manual completo passo a passo</span>
-            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 97,00</span>
+            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 60,00</span>
           </li>
           <li style="justify-content:space-between;">
             <span style="display:flex;align-items:center;gap:10px;"><span class="ic">✓</span> Aula completa do manual</span>
-            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 197,00</span>
+            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 97,00</span>
           </li>
           <li style="justify-content:space-between;">
-            <span style="display:flex;align-items:center;gap:10px;"><span class="ic">✓</span> Script do método</span>
-            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 97,00</span>
+            <span style="display:flex;align-items:center;gap:10px;"><span class="ic">✓</span> Script MAPA</span>
+            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 47,00</span>
           </li>
           <li style="justify-content:space-between;">
             <span style="display:flex;align-items:center;gap:10px;"><span class="ic">✓</span> Planilha de controle financeiro</span>
-            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 97,00</span>
+            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 47,00</span>
           </li>
           <li style="justify-content:space-between;">
             <span style="display:flex;align-items:center;gap:10px;"><span class="ic">✓</span> Aula da planilha de controle financeiro</span>
-            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 147,00</span>
+            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 97,00</span>
+          </li>
+          <li style="justify-content:space-between;">
+            <span style="display:flex;align-items:center;gap:10px;"><span class="ic">✓</span> Aula: como montar um currículo, ir bem na entrevista e fazer cursos gratuitos nacionais e internacionais</span>
+            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 97,00</span>
+          </li>
+          <li style="justify-content:space-between;">
+            <span style="display:flex;align-items:center;gap:10px;"><span class="ic">✓</span> Currículo modelo para modelagem</span>
+            <span style="color:var(--gray);font-size:.85rem;white-space:nowrap;">R$ 25,00</span>
           </li>
         </ul>
         <div style="border-top:1px solid rgba(0,229,255,.18);padding-top:16px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;">
           <span style="font-size:.88rem;color:var(--gray);">Valor total</span>
-          <span style="text-decoration:line-through;color:var(--gray);font-size:1rem;font-weight:700;">R$ 635,00</span>
+          <span style="text-decoration:line-through;color:var(--gray);font-size:1rem;font-weight:700;">R$ 470,00</span>
         </div>
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;flex-wrap:wrap;gap:8px;">
           <span style="font-size:1rem;font-weight:700;color:var(--white);">Somente hoje por</span>
-          <div class="price-now" style="margin:0;">R$ 37,<span style="font-size:1.9rem;">97</span></div>
+          <div class="price-now" style="margin:0;">R$ 47,<span style="font-size:1.9rem;">00</span></div>
         </div>
         <div class="price-note" style="text-align:right;margin-bottom:22px;">Pagamento único &nbsp;·&nbsp; Acesso imediato</div>
         <a href="https://pay.kiwify.com.br/6dTpLaM" target="_blank" rel="noopener" class="btn-primary pulse" style="width:100%;font-size:1.05rem;padding:20px;">
@@ -1247,7 +1303,7 @@
   <div class="container">
     <div class="footer-inner">
       <div class="logo-wrap">
-        <img src="logo_wolf_circle.png" alt="SigaLearning" width="36" height="36" />
+        <img src="logo_wolf_circle.png" alt="SigaLearning" width="36" height="36" loading="lazy" decoding="async" />
         <div class="logo-text">SIGA<span>LEARNING</span></div>
       </div>
       <p class="footer-disclaimer">
@@ -1261,7 +1317,7 @@
 
 <!-- ═══════════════════════ FLOATING CTA -->
 <div class="floating-cta" id="floatingCta" aria-hidden="true">
-  <a href="https://pay.kiwify.com.br/6dTpLaM" target="_blank" rel="noopener" class="btn-primary" tabindex="-1">Garantir por R$37,97 →</a>
+  <a href="https://pay.kiwify.com.br/6dTpLaM" target="_blank" rel="noopener" class="btn-primary" tabindex="-1">Garantir por R$47,00 →</a>
 </div>
 
 <!-- ═══════════════════════ SCRIPTS -->
@@ -1346,6 +1402,24 @@
     });
   }, { threshold: .5 });
   document.querySelectorAll('[data-count]').forEach(el => cntObs.observe(el));
+
+  /* ── COUNTDOWN ────────────────────────────── */
+  (function () {
+    const DURATION = 10 * 60;
+    const minEl = document.getElementById('cd-min');
+    const secEl = document.getElementById('cd-sec');
+    if (!minEl || !secEl) return;
+    let remaining = DURATION;
+    function render() {
+      minEl.textContent = String(Math.floor(remaining / 60)).padStart(2, '0');
+      secEl.textContent = String(remaining % 60).padStart(2, '0');
+    }
+    render();
+    setInterval(() => {
+      remaining = remaining > 0 ? remaining - 1 : DURATION;
+      render();
+    }, 1000);
+  })();
 
   /* ── FAQ ──────────────────────────────────── */
   function toggleFaq(btn) {
